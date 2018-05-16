@@ -2,7 +2,6 @@
 {
     public interface IExtensionsFactory
     {
-        IExtensionsBase GetHulkExtension(IServerInstance server);
-        IExtensionsBase GetWidowExtension(IServerInstance server);
+        IExtensionsBase GetExtension<T>(IServerInstance server);
     }
 }

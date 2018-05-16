@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using SomeUpdatedLegacyWithMocks.Extensions;
 using SomeUpdatedLegacyWithMocks.Interfaces;
 using SomeUpdatedLegacyWithMocks.Server;
 
@@ -23,8 +24,8 @@ namespace Test.SomeUpdatedLegacyWithMocks
             widowExtension.Setup(h => h.IsExtensionReady).Returns(false);
 
             var extensionsFactory = new Mock<IExtensionsFactory>();
-            extensionsFactory.Setup(e => e.GetWidowExtension(It.IsAny<IServerInstance>())).Returns(widowExtension.Object);
-            extensionsFactory.Setup(e => e.GetHulkExtension(It.IsAny<IServerInstance>())).Returns(hulkExtension.Object);
+            extensionsFactory.Setup(e => e.GetExtension<WidowExtension>(It.IsAny<IServerInstance>())).Returns(widowExtension.Object);
+            extensionsFactory.Setup(e => e.GetExtension<HulkExtension>(It.IsAny<IServerInstance>())).Returns(hulkExtension.Object);
 
             _extensionsFactory = extensionsFactory.Object;
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using SomeUpdatedLegacyWithMocks.Interfaces;
-using SomeUpdatedLegacyWithMocks.Server;
 
 namespace SomeUpdatedLegacyWithMocks.Extensions
 {

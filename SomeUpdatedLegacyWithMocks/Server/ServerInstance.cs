@@ -1,4 +1,5 @@
-﻿using SomeUpdatedLegacyWithMocks.Interfaces;
+﻿using SomeUpdatedLegacyWithMocks.Extensions;
+using SomeUpdatedLegacyWithMocks.Interfaces;
 
 namespace SomeUpdatedLegacyWithMocks.Server
 {
@@ -19,13 +20,13 @@ namespace SomeUpdatedLegacyWithMocks.Server
 
         public string LoadHulkExtension()
         {
-            var hulk = ExtensionsFactory.GetHulkExtension(this);
+            var hulk = ExtensionsFactory.GetExtension<HulkExtension>(this);
             return $"Extension {hulk.ExtensionName} status: {hulk.IsExtensionReady}";
         }
 
         public string LoadWidowExtension()
         {
-            var widow = ExtensionsFactory.GetWidowExtension(this);
+            var widow = ExtensionsFactory.GetExtension<WidowExtension>(this);
             return $"Extension {widow.ExtensionName} status: {widow.IsExtensionReady}";
         }
     }
