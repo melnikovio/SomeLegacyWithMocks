@@ -1,9 +1,8 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using SomeLegacyWithMocks.LegacyServer;
 using SomeUpdatedLegacyWithMocks.Interfaces;
+using SomeUpdatedLegacyWithMocks.Server;
 
 namespace Test.SomeUpdatedLegacyWithMocks
 {
@@ -25,6 +24,20 @@ namespace Test.SomeUpdatedLegacyWithMocks
             serverComponentMock.Setup(s => s.Execute(It.IsAny<int>()));
            
             _serverComponent = serverComponentMock.Object;
+        }
+
+        [TestMethod]
+        public void TestMethodProgram()
+        {
+            //arrange
+            var timeout = 1000;
+            var expectedResult = $"Function executed about {timeout * 2} seconds on server {_server.GetServerInstance()}";
+
+            //act
+            var result = _serverComponent.ExecuteAnotherFunction(timeout);
+
+            //assert
+            result.Should().BeEquivalentTo(expectedResult);
         }
 
         [TestMethod]

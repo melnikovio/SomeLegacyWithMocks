@@ -1,5 +1,4 @@
-﻿
-namespace SomeUpdatedLegacyWithMocks.Interfaces
+﻿namespace SomeUpdatedLegacyWithMocks.Interfaces
 {
     public interface IServerComponent
     {

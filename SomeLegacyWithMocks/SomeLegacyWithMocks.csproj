@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionsForLegacyServer\ExtensionsBase.cs" />
+    <Compile Include="ExtensionsForLegacyServer\HulkExtension.cs" />
+    <Compile Include="ExtensionsForLegacyServer\WidowExtension.cs" />
     <Compile Include="LegacyServer\LegacyServerInstance.cs" />
     <Compile Include="LegacyServer\LegacyServerComponent.cs" />
     <Compile Include="Program.cs" />

@@ -1,5 +1,6 @@
 ﻿using SomeLegacyWithMocks.LegacyServer;
 using System;
+using SomeLegacyWithMocks.ExtensionsForLegacyServer;
 
 namespace SomeLegacyWithMocks
 {
@@ -11,6 +12,7 @@ namespace SomeLegacyWithMocks
         {
             Console.WriteLine("Start");
             StartLegacyServerAndExecuteFunctions();
+            CheckExtensions();
             Console.WriteLine("Finish");
             Console.ReadKey();
         }
@@ -21,6 +23,13 @@ namespace SomeLegacyWithMocks
             var component = new LegacyServerComponent(server);
             Console.WriteLine(component.ExecuteSomeFunction(DefaultTimeout));
             Console.WriteLine(component.ExecuteAnotherFunction(DefaultTimeout));
+        }
+
+        private static void CheckExtensions()
+        {
+            var server = new LegacyServerInstance("Test Legacy Server with extensions");
+            Console.WriteLine(server.LoadHulkExtension());
+            Console.WriteLine(server.LoadWidowExtension());
         }
     }
 }

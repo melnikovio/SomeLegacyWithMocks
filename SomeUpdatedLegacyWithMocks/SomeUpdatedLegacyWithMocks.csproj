@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ExtensionsBase.cs" />
+    <Compile Include="Extensions\ExtensionsFactory.cs" />
+    <Compile Include="Extensions\HulkExtension.cs" />
+    <Compile Include="Extensions\WidowExtension.cs" />
+    <Compile Include="Interfaces\IExtensionsBase.cs" />
+    <Compile Include="Interfaces\IExtensionsFactory.cs" />
     <Compile Include="Interfaces\IServerComponent.cs" />
     <Compile Include="Interfaces\IServerInstance.cs" />
     <Compile Include="Program.cs" />
@@ -52,5 +58,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

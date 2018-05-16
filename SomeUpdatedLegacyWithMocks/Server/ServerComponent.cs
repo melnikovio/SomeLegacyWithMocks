@@ -1,11 +1,11 @@
-﻿using SomeUpdatedLegacyWithMocks.Interfaces;
-using System.Threading;
+﻿using System.Threading;
+using SomeUpdatedLegacyWithMocks.Interfaces;
 
-namespace SomeLegacyWithMocks.LegacyServer
+namespace SomeUpdatedLegacyWithMocks.Server
 {
     public class ServerComponent : IServerComponent
     {
-        private IServerInstance _server;
+        private readonly IServerInstance _server;
 
         public ServerComponent(IServerInstance server)
         {
